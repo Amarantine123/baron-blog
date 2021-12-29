@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cosmos.Blog.Repositories", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cosmos.Blog.Services", "sources\Cosmos.Blog.Services\Cosmos.Blog.Services.csproj", "{3EAC8820-6E6A-4FD4-82BE-66FFF9E828B9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cosmos.Blog.WebApi", "sources\Cosmos.Blog.WebApi\Cosmos.Blog.WebApi.csproj", "{D370EDFE-D129-43CD-BAE4-948DE2643C38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cosmos.Blog.Agent", "sources\Cosmos.Blog.Agent\Cosmos.Blog.Agent.csproj", "{23EF5833-5167-4D08-AA80-964D29DEA918}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{3EAC8820-6E6A-4FD4-82BE-66FFF9E828B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EAC8820-6E6A-4FD4-82BE-66FFF9E828B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EAC8820-6E6A-4FD4-82BE-66FFF9E828B9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D370EDFE-D129-43CD-BAE4-948DE2643C38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D370EDFE-D129-43CD-BAE4-948DE2643C38}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D370EDFE-D129-43CD-BAE4-948DE2643C38}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D370EDFE-D129-43CD-BAE4-948DE2643C38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23EF5833-5167-4D08-AA80-964D29DEA918}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23EF5833-5167-4D08-AA80-964D29DEA918}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23EF5833-5167-4D08-AA80-964D29DEA918}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23EF5833-5167-4D08-AA80-964D29DEA918}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
