@@ -1,23 +1,14 @@
-
 <template>
-  ss
+  <router-view/>  
 </template>
-<script>
-export default {
-  name: 'App',
-  components: {
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name:'App',
+  setup() {
+    
   },
-  head: {
-       link: [
-             {
-                 rel: "icon",
-                 href: require("./assets/logo.png")
-             },
-          ]
-       }
-}
+})
 </script>
-
-<style>
-
-</style>
