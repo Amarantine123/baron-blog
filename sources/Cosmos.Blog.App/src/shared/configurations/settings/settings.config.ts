@@ -18,9 +18,9 @@ const settings = {
     //标题是否反转 如果为false:"page - title"，如果为ture:"title - page"
     titleReverse: false,
     //简写
-    abbreviation: 'sc-pro',
+    abbreviation: 'CS',
     //开发环境端口号
-    devPort: '9999',
+    devPort: '4205',
     //版本号
     version: process.env.VUE_APP_VERSION,
     //pro版本copyright可随意修改

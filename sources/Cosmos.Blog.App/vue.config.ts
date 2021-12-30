@@ -64,16 +64,6 @@ module.exports = {
         // svgRule.uses.clear();
         // config.resolve.symlinks(true);
         // svgRule.use('vue-svg-loader').loader('vue-svg-loader');
-        config.module.rule('svg').exclude.add(resolve('src/icon/remixIcon')).end()
-        config.module
-            .rule('remixIcon')
-            .test(/\.svg$/)
-            .include.add(resolve('src/icon/remixIcon'))
-            .end()
-            .use('svg-sprite-loader')
-            .loader('svg-sprite-loader')
-            .options({ symbolId: 'remix-icon-[name]' })
-            .end()
         config.when(process.env.NODE_ENV === 'development', (config) => {
             config.devtool('source-map')
         })
