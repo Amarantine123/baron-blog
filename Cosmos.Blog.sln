@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cosmos.Blog.Commons", "sources\Cosmos.Blog.Commons\Cosmos.Blog.Commons.csproj", "{308225E4-E5EF-4787-8460-07944ACA743A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cosmos.Blog.Models", "sources\Cosmos.Blog.Models\Cosmos.Blog.Models.csproj", "{EDE41243-69B8-41DD-99A0-70646DAB429C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cosmos.Blog.Repositories", "sources\Cosmos.Blog.Repositories\Cosmos.Blog.Repositories.csproj", "{58C4EB5A-67DF-4DF1-A1E3-6710591846B7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cosmos.Blog.Services", "sources\Cosmos.Blog.Services\Cosmos.Blog.Services.csproj", "{3EAC8820-6E6A-4FD4-82BE-66FFF9E828B9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cosmos.Blog.Agent", "sources\Cosmos.Blog.Agent\Cosmos.Blog.Agent.csproj", "{23EF5833-5167-4D08-AA80-964D29DEA918}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{308225E4-E5EF-4787-8460-07944ACA743A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{308225E4-E5EF-4787-8460-07944ACA743A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{308225E4-E5EF-4787-8460-07944ACA743A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{308225E4-E5EF-4787-8460-07944ACA743A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDE41243-69B8-41DD-99A0-70646DAB429C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDE41243-69B8-41DD-99A0-70646DAB429C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDE41243-69B8-41DD-99A0-70646DAB429C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDE41243-69B8-41DD-99A0-70646DAB429C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58C4EB5A-67DF-4DF1-A1E3-6710591846B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58C4EB5A-67DF-4DF1-A1E3-6710591846B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58C4EB5A-67DF-4DF1-A1E3-6710591846B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58C4EB5A-67DF-4DF1-A1E3-6710591846B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EAC8820-6E6A-4FD4-82BE-66FFF9E828B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EAC8820-6E6A-4FD4-82BE-66FFF9E828B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EAC8820-6E6A-4FD4-82BE-66FFF9E828B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EAC8820-6E6A-4FD4-82BE-66FFF9E828B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23EF5833-5167-4D08-AA80-964D29DEA918}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23EF5833-5167-4D08-AA80-964D29DEA918}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23EF5833-5167-4D08-AA80-964D29DEA918}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23EF5833-5167-4D08-AA80-964D29DEA918}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1654DF2F-8AF6-4734-AC89-072D6CE70F76}
+	EndGlobalSection
+EndGlobal
