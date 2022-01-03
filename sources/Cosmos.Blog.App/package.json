@@ -1,62 +1,50 @@
 {
-  "name": "cosmos-blog",
-  "version": "1.0.0",
-  "private": true,
-  "author": {
-    "name": "Baron",
-    "email": "boshao.li@outlook.com"
-  },
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
-  },
-  "dependencies": {
-    "ant-design-vue": "^2.2.8",
-    "core-js": "^3.6.5",
-    "remixicon": "^2.5.0",
-    "vue": "^3.0.0",
-    "vue-class-component": "^8.0.0-0",
-    "vue-router": "^4.0.12"
-  },
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.18.0",
-    "@typescript-eslint/parser": "^4.18.0",
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-typescript": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.0",
-    "@vue/eslint-config-typescript": "^7.0.0",
-    "acorn": "^8.7.0",
-    "acorn-import-assertions": "^1.8.0",
-    "babel-eslint": "^10.1.0",
-    "babel-plugin-import": "^1.13.3",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0",
-    "html-webpack-plugin": "^4.5.2",
-    "typescript": "~4.1.5",
-    "webpack": "^4.46.0"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
+    "name": "cosmos-blog",
+    "version": "1.0.0",
+    "description": "A Quasar Framework app",
+    "productName": "Quasar App",
+    "author": "baron",
+    "private": true,
+    "scripts": {
+        "lint": "eslint --ext .js,.ts,.vue ./",
+        "test": "echo \"No test specified\" && exit 0",
+        "serve": "quasar dev",
+        "deploy": "push-dir --dir=dist/spa --remote=gh-pages --branch=master"
     },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended",
-      "@vue/typescript"
+    "dependencies": {
+        "@intlify/vue-i18n-loader": "^4.1.0",
+        "@quasar/extras": "^1.0.0",
+        "axios": "^0.21.1",
+        "core-js": "^3.6.5",
+        "push-dir": "^0.4.1",
+        "quasar": "^2.0.0",
+        "vue-i18n": "^9.0.0",
+        "vuex": "^4.0.1"
+    },
+    "devDependencies": {
+        "@babel/eslint-parser": "^7.13.14",
+        "@quasar/app": "^3.0.0",
+        "@types/node": "^12.20.21",
+        "@typescript-eslint/eslint-plugin": "^4.16.1",
+        "@typescript-eslint/parser": "^4.16.1",
+        "eslint": "^7.14.0",
+        "eslint-config-prettier": "^8.1.0",
+        "eslint-plugin-vue": "^7.0.0"
+    },
+    "browserslist": [
+        "last 10 Chrome versions",
+        "last 10 Firefox versions",
+        "last 4 Edge versions",
+        "last 7 Safari versions",
+        "last 8 Android versions",
+        "last 8 ChromeAndroid versions",
+        "last 8 FirefoxAndroid versions",
+        "last 10 iOS versions",
+        "last 5 Opera versions"
     ],
-    "parserOptions": {
-      "parser": "@typescript-eslint/parser"
-    },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ],
-  "license": "MIT"
+    "engines": {
+        "node": ">= 12.22.1",
+        "npm": ">= 6.13.4",
+        "yarn": ">= 1.21.1"
+    }
 }
