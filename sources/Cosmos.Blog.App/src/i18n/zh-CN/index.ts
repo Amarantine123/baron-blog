@@ -1,9 +1,5 @@
-// This is just an example,
-// so you can safely delete all default props below
+import {LayoutChineseLocalization} from 'layouts/localization/layout.localization.cn'
 
-export default {
-    failed: '操作失败',
-    success: '操作成功',
-    language:'语言'
-  };
-  
+const ChineseLocalization=Object.assign({},LayoutChineseLocalization);
+
+export default ChineseLocalization;

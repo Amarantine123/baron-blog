@@ -1,71 +1,37 @@
-interface SettingsConfiguration{
-    
+export interface SettingsConfiguration{
     publicPath: string,
-    
     outputDir: string,
     assetsDir: string,
-
     lintOnSave: boolean,
-
     transpileDependencies:string[],
-    
     baseURL:string
-    
     title:string
-    
     titleSeparator:string,
-    
     titleReverse: boolean,
-    
     abbreviation: string,
-    
     devPort: number,
-    
     copyright: string,
-    
     keepAliveMaxNum: number,
-    
     routerMode: string,
-    
     routesWhiteList: string[],
-    
     loadingText: string,
-    
     tokenName: string,
-    
     tokenTableName: string,
-    
     storage: string,
-    
     recordRoute: boolean,
-    
     logo: string,
-    
     i18n: string,
-    
     errorLog: string[],
-    
     loginInterception:boolean,
-    
     loginRSA: boolean,
-    
     authentication: string,
-    
     rolesControl: boolean,
-    
     uniqueOpened: boolean,
-    
     defaultOpeneds: string[],
-    
     debounce: string[],
-    
-    
     build7z: boolean,
-    
     templateFolder: string,
-    
     donation: boolean,
-    
     openFirstMenu: boolean,
 }
 export const Settings : SettingsConfiguration={

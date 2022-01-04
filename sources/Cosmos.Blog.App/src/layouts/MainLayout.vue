@@ -1,8 +1,22 @@
 <template>
 <div class="q-pa-md">
-  <q-layout view="LHh lpr lFf" class="shadow-2 rounded-borders">
+  <q-layout view="hHh lpr fFf" class="shadow-2 rounded-borders">
     <q-header elevated class="bg-cyan">
       <q-toolbar>
+        <div class="q-gutter-y-md column" style="max-width: 260px">
+              <q-input
+              v-model="searchText"
+              debounce="500"
+              :placeholder="$t('search')"
+            >
+            <template v-slot:prepend>
+              <q-icon name="search" />
+            </template>
+             <template v-slot:append>
+          <q-icon v-if="searchText !== ''" name="close" @click="searchText = ''" class="cursor-pointer" />
+        </template>
+        </q-input>
+      </div>
         <q-btn
           flat
           dense
@@ -12,92 +26,55 @@
           class="q-mr-xs"
           @click="toggleLeftDrawer"
         />
-        <a-space/>
+
         <q-toolbar-title>
-         <strong> Welcome To Baron's Blog</strong>
+         <strong> {{$t('title')}}</strong>
         </q-toolbar-title>
-          <q-btn flat round dense icon="search" class="q-mr-xs" />
+
           <div class="q-pa-md">
-              <div class="q-gutter-md row"> 
+              <div class="q-gutter-md row">
                 <q-select
-                  label="Language"
-                  color='orange'
-                  transition-show="flip-up"
-                  transition-hide="flip-down"
-                  filled
-                  v-model="lang_op"
-                  :options="options"
-                  style="width: 150px"
-                >
-                <template v-slot:append>
-                  <q-icon name="mode_standby" />
-                  </template>
-                </q-select>
-                  <q-select 
-                  color="purple-12"
-                  transition-show="flip-up"
-                  transition-hide="flip-down" 
-                  v-model="lang_op" 
-                  :options="options" 
-                  label="Theme"
-                  style="width: 150px"
-                  >
-                  <template v-slot:append>
-                  <q-icon name="settings_suggest" />
-                  </template>
-                  </q-select>
+                  v-model="locale"
+                  :options="localeOptions"
+                  :label="$t('language_description')"
+                  dense
+                  borderless
+                  emit-value
+                  map-options
+                  options-dense
+                  style="min-width: 150px"
+                />
              </div>
           </div>
-          <q-btn flat round dense icon="group_add" />
       </q-toolbar>
-           <div class="q-gutter-y-md">
-          <q-tabs>
-        <q-route-tab
-          icon="article"
-          to="/your/route"
-          replace
-          label="Articles"
-        />
-        <q-route-tab
-          icon="image"
-          to="/some/other/route"
-          replace
-          label="Images"
-        />
-          <q-route-tab
-          icon="smart_display"
-          to="/some/other/route"
-          replace
-          label="Videos"
-        />
-      </q-tabs>
-      </div>
     </q-header>
+
      <q-footer reveal elevated>
-        <p style="text-align: center;margin:20px auto">  Copyright © 2022 Baron | 网站托管：github.com | Chrome | Firefox | Safari</p>
+        <p style="text-align: center;margin:20px auto">  {{$t('copyright_message')}}</p>
       </q-footer>
     <q-drawer
       v-model="leftDrawerOpen"
       show-if-above
       bordered
     >
-      <q-list>
-        <q-item-label
-          header
-        >
-          Menus
-        </q-item-label>
+      <q-item>
+        <q-item-section>
+          <q-item-label overline>OVERLINE</q-item-label>
+          <q-item-label>2022-1-3</q-item-label>
+          <q-item-label caption>Today is not a happy day!</q-item-label>
+        </q-item-section>
 
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
+        <q-item-section side top>
+          <q-item-label caption>Baron</q-item-label>
+        </q-item-section>
+      </q-item>
+
+      <q-separator spaced />
+      <q-item-label header>Menu</q-item-label>
+  <essential-link v-bind="menu" v-for="(menu,key) in MenuList" :key="key"></essential-link>
     </q-drawer>
 
     <q-page-container>
-  
       <router-view />
     </q-page-container>
   </q-layout>
@@ -105,74 +82,29 @@
 </template>
 
 <script lang="ts">
-import EssentialLink from 'components/EssentialLink.vue'
-const linksList = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-];
-
 import { defineComponent, ref,reactive } from 'vue'
+import {useI18n}from 'vue-i18n'
+import  EssentialLink  from 'components/EssentialLink.vue';
+import {CategoriesMockup}from 'src/services/categories/categories.model'
 export   default  defineComponent({
   name: 'MainLayout',
-
   components: {
-    EssentialLink,    
+    EssentialLink
   },
-
   setup () {
     const leftDrawerOpen = ref(false);
-    const lang_op=ref(null);
-    const options=reactive([
-      'English',
-      'Chinese',
+    const localeOptions=reactive([
+      {value:'en-US',label:'English'},
+      {value:'zh-CN',label:'中文'}
     ])
-    
+    const{locale}=useI18n({useScope:'global'})
+    const searchText=ref('');
     return {
-      essentialLinks: linksList,
-      leftDrawerOpen,   
-      tab:ref('images') ,
-      lang_op,
-      options,
+      leftDrawerOpen,
+      localeOptions,
+      locale,
+      searchText,
+      MenuList:CategoriesMockup,
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
       }

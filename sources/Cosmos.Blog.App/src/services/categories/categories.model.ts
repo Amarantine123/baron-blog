@@ -1,0 +1,43 @@
+export interface ICategories{
+  id:number,
+  parentId:number,
+  title:string,
+  metaTitle:string,
+  slug:string,
+  content:string,
+  link:string,
+  icon:string
+}
+
+export const CategoriesMockup:ICategories[]=[
+  {
+  id:1,
+  parentId:0,
+  title:'中国哲学',
+  metaTitle:'哲学',
+  slug:'',
+  content:'',
+  link:'/index',
+  icon:'book'
+  },
+  {
+    id:2,
+    parentId:0,
+    title:'心理学',
+    metaTitle:'心理学',
+    slug:'',
+    content:'',
+    link:'/index',
+    icon:'star_purple500'
+    },
+    {
+      id:3,
+      parentId:0,
+      title:'经济学',
+      metaTitle:'经济学',
+      slug:'',
+      content:'',
+      link:'/User',
+      icon:'bathtub'
+      }
+]
