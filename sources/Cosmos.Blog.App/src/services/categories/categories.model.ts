@@ -41,3 +41,51 @@ export const CategoriesMockup:ICategories[]=[
       icon:'bathtub'
       }
 ]
+
+export const MenuList=[
+  {
+    caption:'this is the first menu',
+    icon:'favorite_border',
+    path:'/index',
+    title:'哲学',
+    level:0
+    },
+    {
+    caption:'this is the first menu',
+    icon:'wifi_lock',
+    title:'经济学',
+    level:0,
+    children:[
+      {
+        icon:'front_hand',
+        path:'/Index',
+        title:'西方经济学',
+        caption:'first meta title'
+      },
+      {
+        icon:'front_hand',
+        path:'/user',
+        title:'马克思经济学原理',
+        caption:'second meta title'
+      }
+    ]},
+  {
+    caption:'this is the second menu',
+    icon:'emoji_emotions',
+    title:'管理学',
+    level:0,
+    children:[
+      {
+        icon:'hiking',
+        path:'/Index',
+        title:'行政管理',
+        caption:'first meta title'
+      },
+      {
+        icon:'hiking',
+        path:'/user',
+        title:'酒店管理',
+        caption:'second meta title'
+      }
+  ]}
+]

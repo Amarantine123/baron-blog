@@ -9,7 +9,6 @@
 /* eslint-env node */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { configure } = require('quasar/wrappers');
-const Webpack = require('webpack');
 const path = require('path');
 const { type } = require('os');
 module.exports = configure(function(ctx) {
@@ -125,8 +124,8 @@ module.exports = configure(function(ctx) {
             },
 
             // iconSet: 'material-icons', // Quasar icon set
-            // lang: 'en-US', // Quasar language pack
-            lang: 'zh-CN',
+            lang: 'en-US', // Quasar language pack
+            //lang: 'zh-CN',
 
             // For special cases outside of where the auto-import strategy can have an impact
             // (like functional components as one of the examples),

@@ -4,7 +4,12 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
-    children: [{ path: '', component: () => import('pages/Index.vue') }],
+    children: [{ path: '', component: () => import('pages/home/Index.vue') }],
+  },
+  {
+    path: '/test',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [{ path: '', component: () => import('../views/Test2.vue') }],
   },
   {
     path: '/User',
@@ -13,7 +18,7 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/index',
-    component: () => import('../views/Layout.vue'),
+    component: () => import('../views/Test.vue'),
     children: [{ path: '', component: () => import('pages/Index.vue') }],
   },
 

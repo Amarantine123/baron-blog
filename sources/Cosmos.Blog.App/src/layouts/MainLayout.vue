@@ -43,6 +43,9 @@
                   map-options
                   options-dense
                   style="min-width: 150px"
+                  transition-show="flip-up"
+                  transition-hide="flip-down"
+
                 />
              </div>
           </div>
@@ -63,33 +66,58 @@
           <q-item-label>2022-1-3</q-item-label>
           <q-item-label caption>Today is not a happy day!</q-item-label>
         </q-item-section>
-
         <q-item-section side top>
           <q-item-label caption>Baron</q-item-label>
         </q-item-section>
       </q-item>
-
       <q-separator spaced />
-      <q-item-label header>Menu</q-item-label>
-  <essential-link v-bind="menu" v-for="(menu,key) in MenuList" :key="key"></essential-link>
+        <q-item-section>
+          <q-list bordered class="rounded-borders">
+              <cosmos-menu v-for="(menu,i) in menus" v-bind="menu" :key="i">
+              <cosmos-menu-item v-for="(item,q) in menu.children" :key="q" v-bind="item" />
+              </cosmos-menu>
+            </q-list>
+        </q-item-section>
     </q-drawer>
 
+    <q-drawer
+        side="right"
+        show-if-above
+        :width="320"
+        :breakpoint="700"
+        v-model="drawerRight"
+        bordered
+    >
+      <q-list  dense>
+          <q-item>
+               <q-date
+                v-model="date"
+                color="orange"
+                />
+          </q-item>
+      </q-list>
+    </q-drawer>
     <q-page-container>
       <router-view />
+      <q-page-scroller position="bottom-right" :scroll-offset="150" :offset="[18, 18]">
+            <q-btn fab icon="keyboard_arrow_up" color="accent" />
+          </q-page-scroller>
     </q-page-container>
   </q-layout>
-  </div>
+</div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref,reactive } from 'vue'
 import {useI18n}from 'vue-i18n'
-import  EssentialLink  from 'components/EssentialLink.vue';
-import {CategoriesMockup}from 'src/services/categories/categories.model'
+import CosmosMenu from 'components/menus/CosmosMenu.vue';
+import CosmosMenuItem from 'components/menus/CosmosMenuItem.vue';
+import {CategoriesMockup,MenuList}from 'src/services/categories/categories.model'
 export   default  defineComponent({
   name: 'MainLayout',
   components: {
-    EssentialLink
+    CosmosMenu,
+    CosmosMenuItem
   },
   setup () {
     const leftDrawerOpen = ref(false);
@@ -101,13 +129,16 @@ export   default  defineComponent({
     const searchText=ref('');
     return {
       leftDrawerOpen,
+      drawerRight: ref(false),
       localeOptions,
       locale,
       searchText,
       MenuList:CategoriesMockup,
+      menus:MenuList,
+      date:ref(Date.now().toLocaleString()),
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
-      }
+      },
     }
   }
 })
