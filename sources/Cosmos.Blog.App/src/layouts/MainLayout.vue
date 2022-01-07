@@ -26,9 +26,12 @@
           class="q-mr-xs"
           @click="toggleLeftDrawer"
         />
-
         <q-toolbar-title>
-         <strong> {{$t('title')}}</strong>
+          <q-field item-aligned  standout="bg-yellow text-white" bg-color="cyan-13"  stack-label>
+              <template v-slot:control>
+                <div style="text-align:center;font-size:28px;font-family:Courier New;color:" class="self-center full-width no-outline" tabindex="0"><strong> {{$t('title')}}</strong></div>
+              </template>
+          </q-field>
         </q-toolbar-title>
 
           <div class="q-pa-md">
@@ -72,7 +75,7 @@
       </q-item>
       <q-separator spaced />
         <q-item-section>
-          <q-list bordered class="rounded-borders">
+          <q-list bordered class="rounded-borders" separator padding>
               <cosmos-menu v-for="(menu,i) in menus" v-bind="menu" :key="i">
               <cosmos-menu-item v-for="(item,q) in menu.children" :key="q" v-bind="item" />
               </cosmos-menu>
