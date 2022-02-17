@@ -113,6 +113,8 @@
 <script lang="ts">
 import { defineComponent, ref,reactive } from 'vue'
 import {useI18n}from 'vue-i18n'
+import {DateTime} from 'luxon'
+
 import CosmosMenu from 'components/menus/CosmosMenu.vue';
 import CosmosMenuItem from 'components/menus/CosmosMenuItem.vue';
 import {CategoriesMockup,MenuList}from 'src/services/categories/categories.model'
@@ -130,15 +132,17 @@ export   default  defineComponent({
     ])
     const{locale}=useI18n({useScope:'global'})
     const searchText=ref('');
+    const date=ref(DateTime.now().toLocaleString(DateTime.DATE_MED));
+    console.log('date:',date.value)
     return {
       leftDrawerOpen,
       drawerRight: ref(false),
       localeOptions,
       locale,
       searchText,
+      date,
       MenuList:CategoriesMockup,
       menus:MenuList,
-      date:ref(Date.now().toLocaleString()),
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
       },

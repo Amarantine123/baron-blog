@@ -180,9 +180,9 @@ module.exports = configure(function(ctx) {
             },
 
             manifest: {
-                name: 'Quasar App',
-                short_name: 'Quasar App',
-                description: 'A Quasar Framework app',
+                name: 'Cosmos Blog',
+                short_name: 'Baron Blog',
+                description: 'Baron\'s Personal Blog',
                 display: 'standalone',
                 orientation: 'portrait',
                 background_color: '#ffffff',
