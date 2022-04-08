@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cosmos.Blog.Services", "sou
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cosmos.Blog.Agent", "sources\Cosmos.Blog.Agent\Cosmos.Blog.Agent.csproj", "{23EF5833-5167-4D08-AA80-964D29DEA918}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{8BD18526-374D-4346-8BBA-7B0C2FEA0CE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Master.Agent", "Cosmos.Master.Agent\Cosmos.Master.Agent.csproj", "{6D4B6E52-FD8D-4FAB-BABC-88F61048D2EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,9 +43,16 @@ Global
 		{23EF5833-5167-4D08-AA80-964D29DEA918}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23EF5833-5167-4D08-AA80-964D29DEA918}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23EF5833-5167-4D08-AA80-964D29DEA918}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D4B6E52-FD8D-4FAB-BABC-88F61048D2EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D4B6E52-FD8D-4FAB-BABC-88F61048D2EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D4B6E52-FD8D-4FAB-BABC-88F61048D2EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D4B6E52-FD8D-4FAB-BABC-88F61048D2EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6D4B6E52-FD8D-4FAB-BABC-88F61048D2EA} = {8BD18526-374D-4346-8BBA-7B0C2FEA0CE9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1654DF2F-8AF6-4734-AC89-072D6CE70F76}
